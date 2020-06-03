@@ -2,7 +2,7 @@
  * @Author: renlei
  * @Date: 2020-05-27 17:13:09
  * @LastEditors: renlei
- * @LastEditTime: 2020-06-01 16:38:50
+ * @LastEditTime: 2020-06-03 10:10:09
  * @Description:登录界面
  */
 /*
@@ -94,7 +94,9 @@ class Login extends Component {
                 登录
               </Button>
             </div>
-            <p className="loginTips">Tips : 用户名和密码随便填。</p>
+            <p className="loginTips">
+              提示 : 用户名填写1：超级管理员；2或者3：一般管理员。
+            </p>
           </Form>
         </div>
       </div>
