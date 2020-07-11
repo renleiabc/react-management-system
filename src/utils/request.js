@@ -2,44 +2,45 @@
  * @Author: renlei
  * @Date: 2020-05-17 20:26:24
  * @LastEditors: renlei
- * @LastEditTime: 2020-05-21 15:03:51
+ * @LastEditTime: 2020-07-09 09:34:04
  * @Description:axios 数据请求封装
  */
 
-import axios from "axios";
-import qs from "qs";
+import axios from 'axios';
+import qs from 'qs';
+
 const Axios = axios.create({
-  baseURL: "/api/",
+  baseURL: '/api/',
   timeout: 1000,
   headers: {
-    Accept: "application/json",
-    "Content-Type": "application/x-www-form-urlencoded",
-  },
+    Accept: 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
 });
 // 请求前拦截
 Axios.interceptors.request.use(
-  (config) => {
+  config => {
     return config;
   },
-  (err) => {
-    console.log("请求超时");
+  err => {
+    console.log('请求超时');
     return Promise.reject(err);
   }
 );
 
 // 返回后拦截
 Axios.interceptors.response.use(
-  (data) => {
+  data => {
     return data;
   },
-  (err) => {
+  err => {
     console.log(err);
     if (err.response.status === 504 || err.response.status === 404) {
-      console.log("服务器被吃了⊙﹏⊙∥");
+      console.log('服务器被吃了⊙﹏⊙∥');
     } else if (err.response.status === 401) {
-      console.log("登录信息失效⊙﹏⊙∥");
+      console.log('登录信息失效⊙﹏⊙∥');
     } else if (err.response.status === 500) {
-      console.log("服务器开小差了⊙﹏⊙∥");
+      console.log('服务器开小差了⊙﹏⊙∥');
     }
     return Promise.reject(err);
   }
@@ -50,16 +51,16 @@ const http = {
    * @param  {接口地址} url
    * @param  {请求参数} params
    */
-  get: function (url, params) {
+  get(url, params) {
     params = params || {};
     return new Promise((resolve, reject) => {
       Axios.get(url, {
-        params: params,
+        params
       })
-        .then((res) => {
+        .then(res => {
           resolve(res.data);
         })
-        .catch((error) => {
+        .catch(error => {
           reject(error);
         });
     });
@@ -68,18 +69,18 @@ const http = {
    * @param  {接口地址} url
    * @param  {请求参数} params
    */
-  post: function (url, params) {
+  post(url, params) {
     params = params || {};
     return new Promise((resolve, reject) => {
       Axios.post(url, qs.stringify(params))
-        .then((res) => {
+        .then(res => {
           resolve(res.data);
         })
-        .catch((error) => {
+        .catch(error => {
           reject(error);
         });
     });
-  },
+  }
 };
 
 export default http;
