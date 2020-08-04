@@ -2,7 +2,7 @@
  * @Author: renlei
  * @Date: 2020-06-26 11:29:06
  * @LastEditors: renlei
- * @LastEditTime: 2020-06-26 21:51:31
+ * @LastEditTime: 2020-07-12 18:15:56
  * @Description:
  */
 
@@ -35,6 +35,6 @@ module.exports = {
     'global-require': 0,
     'jsx-a11y/no-static-element-interactions': 0,
     'jsx-a11y/click-events-have-key-events': 0,
-    'no-param-reassign': 0
+    'no-plusplus': 0
   }
 };

@@ -3,7 +3,7 @@
  * @Author: renlei
  * @Date: 2020-05-25 16:34:18
  * @LastEditors: renlei
- * @LastEditTime: 2020-07-11 18:07:53
+ * @LastEditTime: 2020-07-11 18:12:03
  * @Description:所有路由文件
  */
 
@@ -91,20 +91,26 @@ export const MainRoutes = () => {
   );
 };
 // 用户权限鉴定函数
+// eslint-disable-next-line react/prop-types
 const LimitRoute = ({ component: Component, fn, ...rest }) => {
   return (
     <Route
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       render={props => (fn() ? <Component {...props} /> : <Redirect to="/main/error/403" />)}
     />
   );
 };
 
 // 路由登录鉴权
+// eslint-disable-next-line react/prop-types
 const AuthRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       render={props => (checkAuth() ? <Component {...props} /> : <Redirect to="/login" />)}
     />
   );
