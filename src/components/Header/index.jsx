@@ -1,8 +1,8 @@
 /*
  * @Author: renlei
  * @Date: 2020-05-28 09:41:43
- * @LastEditors: renlei
- * @LastEditTime: 2020-07-11 18:18:17
+ * @LastEditors: abc
+ * @LastEditTime: 2020-11-10 10:07:49
  * @Description:侧边路由导航
  */
 import React, { Component } from 'react';
@@ -36,6 +36,7 @@ class SiderRouter extends Component {
 
   // 设置全屏
   setFullScreen() {
+    // eslint-disable-next-line react/destructuring-assignment
     const { fullscreen } = this.state.fullscreen;
     const element = document.documentElement;
     if (fullscreen) {
@@ -88,8 +89,7 @@ class SiderRouter extends Component {
           className="collapseBtn"
           onClick={() => {
             this.props.headerStore.onCollapse();
-          }}
-        >
+          }}>
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </div>
         <div className="headerRight">
@@ -130,8 +130,7 @@ class SiderRouter extends Component {
                     退出登录
                   </Menu.Item>
                 </Menu>
-              }
-            >
+              }>
               <span className="elDropdownLink">
                 {this.state.username}
                 <DownOutlined />

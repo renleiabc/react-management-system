@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 class Chart extends Component {
   render() {
     return (
-      <div className='animate-route'>
+      <div className="animate-route">
         <div>schart图表</div>
       </div>
     );

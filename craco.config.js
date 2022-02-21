@@ -1,8 +1,8 @@
 /*
  * @Author: renlei
  * @Date: 2020-05-18 12:00:59
- * @LastEditors: renlei
- * @LastEditTime: 2020-06-26 20:23:58
+ * @LastEditors: abc
+ * @LastEditTime: 2020-11-10 10:03:45
  * @Description:项目配置文件
  */
 const CracoLessPlugin = require('craco-less');

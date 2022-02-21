@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 class Forms extends Component {
   render() {
     return (
-      <div className='animate-route'>
+      <div className="animate-route">
         <div>基础表单</div>
       </div>
     );
